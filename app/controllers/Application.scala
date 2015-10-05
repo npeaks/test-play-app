@@ -22,16 +22,11 @@ class Application @Inject() (uuidGenerator: UUIDGenerator) extends Controller {
     logger.info("Serving index page...")
 
     val javascripts = {
-      if (Play.isDev) {
         // Load all .js and .coffeescript files within app/assets
         Option(Play.getFile("app/assets")).
           filter(_.exists).
           map(findScripts).
           getOrElse(Nil)
-      } else {
-        // Concated and minified by UglifyJS
-        "concat.min.js" :: Nil
-      }
     }
 
     Ok(views.html.index(javascripts))

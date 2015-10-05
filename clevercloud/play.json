@@ -1,0 +1,5 @@
+{
+    "deploy": {
+        "goal": "-dhttp.address=http://npeaks-play-app.cleverapps.io/"
+    }
+}
