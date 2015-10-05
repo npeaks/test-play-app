@@ -6,8 +6,6 @@ scalaVersion := "2.11.6"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-pipelineStages := Seq(uglify, digest, gzip)
-
 pipelineStages in Assets := Seq()
 
 pipelineStages := Seq(uglify, digest, gzip)
